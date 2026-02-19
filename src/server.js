@@ -16,6 +16,18 @@ app.use("/api/posts", require("./routes/postRoutes"));
 
 app.get("/", (req, res) => res.send("Nurdd API Running ✔"));
 
+ 
+app.post("/update-location", (req, res) => {
+
+  console.log("📍 LOCATION HIT =>", req.body);
+
+  res.status(200).json({
+    success: true,
+    message: "Location received successfully ✔"
+  });
+
+});
+
 app.listen(process.env.PORT, () =>
     console.log("🔥 Server running on port " + process.env.PORT)
 );
